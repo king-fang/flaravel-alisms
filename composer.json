@@ -1,0 +1,20 @@
+{
+    "name": "flaravel/sms",
+    "description": "阿里云短信服务通知",
+    "require": {
+        "jjonline/aliyun-dysms-php-sdk": "v2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fxj",
+            "email": "fangxijun@meimeik.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Flaravel\\": "src/"
+        }
+    }
+}
