@@ -16,5 +16,15 @@
         "psr-4": {
             "Flaravel\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Flaravel\\FlaravelSmsServiceProvider"
+            ],
+            "aliases": {
+                "FLaravelSms": "Flaravel\\FLaravelSms"
+            }
+        }
     }
 }
