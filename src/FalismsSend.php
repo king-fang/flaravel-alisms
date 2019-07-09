@@ -30,7 +30,7 @@ class FalismsSend implements AliSmsInterface
     public function code(string $mobile, string $driver, string $code = '')
     {
         $parms = $this->getParmJson($driver);
-        $this->setRequest(self::SMS_CODE,$mobile,$parms,empty($code)?[]:['code'=>$code]);
+        $this->setRequest(self::SMS_CODE,$mobile,$parms,empty($code)? '': $code);
         return $this->send();
     }
 
@@ -66,7 +66,7 @@ class FalismsSend implements AliSmsInterface
         $this->request->setTemplateCode($parms['sms_code']);
         if($method == AliSmsInterface::SMS_CODE){
             $this->request->setTemplateParam(json_encode(array(
-                "code"=> empty($product) ? $this->randString() : $product['code'],
+                "code"=> empty($product) ? $this->randString() : $product,
             ), JSON_UNESCAPED_UNICODE));
         }else if($method == AliSmsInterface::SMS_NOTICE)
         {
