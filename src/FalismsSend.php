@@ -66,7 +66,7 @@ class FalismsSend implements AliSmsInterface
         $this->request->setTemplateCode($parms['sms_code']);
         if($method == AliSmsInterface::SMS_CODE){
             $this->request->setTemplateParam(json_encode(array(
-                "code"=> empty($product) ? $this->randString() : $product,
+                "code"=> empty($product) ? $this->randString() : isset($product['code']) ? $product['code'] : $product,
             ), JSON_UNESCAPED_UNICODE));
         }else if($method == AliSmsInterface::SMS_NOTICE)
         {
