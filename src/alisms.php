@@ -1,8 +1,8 @@
 <?php
 
 return [
-
-    'driver' => 'code',
+    // code & notice
+    'driver' => 'code', 
 
     'app_key' => env('ALISMS_APPKEY'),
     'app_secret' => env('ALISMS_SECRET'),

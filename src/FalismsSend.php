@@ -70,7 +70,10 @@ class FalismsSend implements AliSmsInterface
             ), JSON_UNESCAPED_UNICODE));
         }else if($method == AliSmsInterface::SMS_NOTICE)
         {
-            $this->request->setTemplateParam(json_encode($product,JSON_UNESCAPED_UNICODE));
+            if(!empty($product))
+            {
+                $this->request->setTemplateParam(json_encode($product,JSON_UNESCAPED_UNICODE));
+            }
         }else{
             return false;
         }
